@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    RED.nodes.registerType('witsml',{
+        category: 'function',
+        color: '#FFAAAA',
+        defaults: {
+            name: {value:""},
+	    msgadd: {value:"", required:true},
+	    msgadd2: {value:"", required:true},
+	    xml: {value:"", required:true},
+	    query: {value:"payload"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "white-globe.png",
+        label: function() {
+            return this.name||"witsml";
+        },
+	oneditprepare: function() {
+		var that = this;
+		this.editor = RED.editor.createEditor({
+			id: 'node-input-xml',
+			mode: 'ace/mode/sql',
+			value: $("#node-input-xml").val()
+		});
+		this.editor.focus();
+	},
+	oneditsave: function () {
+		$("#node-input-xml").val(this.editor.getValue());
+		delete this.editor
+	},
+	});
+
+
+	
+</script>
+
+<script type="text/x-red" data-template-name="witsml">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-msgadd"><i class="icon-tag"></i> Add-to-Msg</label>
+        <input type="text" id="node-input-msgadd" placeholder="text">
+    </div>
+    <div class="form-row">
+        <label for="node-input-msgadd2"><i class="icon-tag"></i> Add-to-Msg2</label>
+        <input type="text" id="node-input-msgadd2" placeholder="text">
+    </div>
+    <div class="form-row" style="margin-bottom: 0px:">
+	<label for="node-input-query" style="width: 100% !important;"><i class="fa fa-comments"></i> Query</label>
+	<input type="hidden" id="node-input-query" autofocus="autofocus">
+    </div>
+    <div class="form-row node-text-editor-row">
+	<div style="height: 250px;" class="node-text-editor" id="node-input-xml" ></div>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="witsml">
+    <p>A simple node that adds something to the msg.payload</p>
+</script>

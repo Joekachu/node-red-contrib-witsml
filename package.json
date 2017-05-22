@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-witsml",
+  "version": "0.0.1",
+  "description": "a very incomplete node",
+  "dependencies": {
+   "mustache": "^2.3.0"
+   "strong-soap": "^1.2.3"
+   "xml2js": "^0.4.17"
+   }
+  "node-red"	: {
+	"nodes": {
+		"witsml": "node-red-contrib-witsml/witsml.js"
+		}
+	}
+
+  "main": "witsml.js",
+  "keywords": [
+    "node-red",
+    "witsml"
+  ],
+  "author": "Joseph",
+  "license": "ISC"
+}

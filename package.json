@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "a very incomplete node",
   "dependencies": {
-   "mustache": "^2.3.0"
-   "strong-soap": "^1.2.3"
+   "mustache": "^2.3.0",
+   "strong-soap": "^1.2.3",
    "xml2js": "^0.4.17"
    }
   "node-red"	: {

@@ -1,4 +1,5 @@
 var Mustache = require('mustache');
+// Test comment by GJD
 module.exports = function(RED) {
     function WitsmlNode(config) {
         RED.nodes.createNode(this,config);
